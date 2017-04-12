@@ -1,4 +1,5 @@
-A mortgage calculator. This app was pretty simple but the alogrithim was pretty fun to create. By using a constructor function with closures I was able to successfuly create a mortgage calculator that is accurate. 
+## mortgage calculator.
+This app was pretty simple and the alogrithim was fun to create. By using a constructor function with closures I was able to successfuly create a mortgage calculator that is accurate as other online mortgage calculators. 
 
 if you are interested in the algorithim i wrote check this out. 
 http://whatiamworkingon.alexpoe.io/2017/04/mortgage-calculator.html
