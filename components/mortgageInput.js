@@ -1,5 +1,7 @@
 import React from 'react';
 import { StyleSheet, Button, Text, View, TextInput } from 'react-native';
+import PropTypes from 'prop-types';
+import Header from './header';
 
 export default class MortgageInput extends React.Component {
   constructor(props) {
@@ -18,8 +20,8 @@ export default class MortgageInput extends React.Component {
   reset() {
     this.setState({
       rate: '',
-      principal: 0,
-      years: 0,
+      principal: null,
+      years: null,
       response: '',
       completed: false
     })
@@ -46,7 +48,7 @@ export default class MortgageInput extends React.Component {
         return Math.round(p * (firstTop / secondBottom));
       }
       this.message = function() {
-        return `At a rate of ${rate} percent with ${months} months of payments and a principal of ${p}, your monthly mortgage payment will be $${this.total()} per month`
+        return `At a rate of ${rate}% with ${months} months of payments and a principal of ${p}, your monthly mortgage payment will be $${this.total()} per month`
       }
     }
     const mortgage = new MonthlyPayments(this.state.rate, this.state.principal, this.state.years);
@@ -57,42 +59,49 @@ export default class MortgageInput extends React.Component {
   }
 
   render() {
-    console.log(this.state.completed, this.state.response)
     return (
       <View style={styles.container}>
+        <Header />
         {
           this.state.completed ?
-            <Text>{this.state.response}</Text>
+          <View
+            style={styles.results}
+          >
+            <Text style={{fontSize: 18, color: 'white'}}>{this.state.response}</Text>
+          </View>
             : null
         }
-        <Text>Rate</Text>
         <TextInput
-          style={{height: 40, backgroundColor: 'pink'}}
+          keyboardType = 'numeric'
+          placeholder="Rate"
+          style={styles.inputs}
           value={this.state.rate}
           onChangeText={(text) => this.setState({rate: text})}
         />
-        <Text>Principal</Text>
         <TextInput
-          style={{height: 40, backgroundColor: 'pink'}}
+          keyboardType = 'numeric'
+          placeholder="Principal"
+          style={styles.inputs}
           value={this.state.principal}
           onChangeText={(text) => this.setState({principal: text})}
         />
-        <Text>Years</Text>
         <TextInput
-          style={{height: 40, backgroundColor: 'pink'}}
+          keyboardType = 'numeric'
+          placeholder="Years"
+          style={styles.inputs}
           value={this.state.years}
           onChangeText={(text) => this.setState({years: text})}
         />
         <Button
           onPress={this.calculate}
+          style={styles.button}
           title="Calculate"
-          color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />
         <Button
           onPress={this.reset}
+          style={styles.button}
           title="Reset"
-          color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />
       </View>
@@ -101,11 +110,31 @@ export default class MortgageInput extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  button: {
+    backgroundColor: 'orange',
+    height: 10,
+    width: 30,
+    color: 'white'
+  },
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#067EBD',
     alignItems: 'center',
     justifyContent: 'center',
-    bottom: 100
+    bottom: 50
   },
+  inputs: {
+    width: 300,
+    alignSelf: 'center',
+    height: 40,
+    margin: 10,
+    padding: 5,
+    backgroundColor: 'lightblue'
+  },
+  results: {
+    width: 300,
+    alignSelf: 'center',
+    height: 70,
+    margin: 10
+  }
 });
