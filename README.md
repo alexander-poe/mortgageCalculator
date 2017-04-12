@@ -1,3 +1,15 @@
+A mortgage calculator. This app was pretty simple but the alogrithim was pretty fun to create. By using a constructor function with closures I was able to successfuly create a mortgage calculator that is accurate. 
+
+if you are interested in the algorithim i wrote check this out. 
+http://whatiamworkingon.alexpoe.io/2017/04/mortgage-calculator.html
+
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Below you'll find information about performing common tasks. The most recent version of this guide is available [here](https://github.com/react-community/create-react-native-app/blob/master/react-native-scripts/template/README.md).
