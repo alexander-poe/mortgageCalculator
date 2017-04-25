@@ -1,10 +1,12 @@
-## mortgage calculator.
+## mortgage calculator
 
-<img src="./IMG_0561_iphone7plusjetblack_portrait.png">
+<img src="mortgagecalculator.png">
+
+This react-native app will blow your socks off it you are looking to calculate your mortage rate. Simply put in your rate as follows <br>
+
 <img src="./IMG_0562_iphone7plusjetblack_portrait.png">
-This app was pretty simple and the alogrithim was fun to create. By using a constructor function with closures I was able to successfuly create a mortgage calculator that is accurate as other online mortgage calculators. 
 
-if you are interested in the algorithim i wrote check this out. 
+check out more on the algorithim that powers this app here 
 http://whatiamworkingon.alexpoe.io/2017/04/mortgage-calculator.html
 
 
